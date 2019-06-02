@@ -7,26 +7,27 @@
 'use strict';
 
 Package.describe({
-  name: 'useraccounts:flow-routing',
-  summary: 'UserAccounts package providing routes configuration capability via kadira:flow-router.',
-  version: '1.14.2',
-  git: 'https://github.com/meteor-useraccounts/flow-routing.git',
+  name: 'cfadams:flow-routing',
+  summary: 'UserAccounts package providing routes configuration capability via ostrio:flow-router-extra.',
+  version: '1.14.4',
+  git: 'https://github.com/cfadams/meteor-useraccounts-flow-routing.git',
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('METEOR@1.0.3');
+  api.versionsFrom('1.4');
 
   api.use([
     'check',
-    'kadira:flow-router',
+    'ecmascript',
+    'ostrio:flow-router-extra',
     'underscore',
-    'useraccounts:core',
+    'cfadams:useraccounts-core',
     'modules'
   ], ['client', 'server']);
 
   api.imply([
-    'kadira:flow-router@2.10.1',
-    'useraccounts:core@1.14.2',
+    'ostrio:flow-router-extra@3.1.1',
+    'cfadams:useraccounts-core@1.14.3',
   ], ['client', 'server']);
 
   api.use([
